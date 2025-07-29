@@ -1,0 +1,380 @@
+[gd_scene load_steps=4 format=3 uid="uid://m3lut8pcqxvv"]
+
+[ext_resource type="Script" uid="uid://bx1rpn6ug678e" path="res://scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bqtoat6bwq2g2" path="res://scripts/stats_dnd.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://r1udnukf64gy" path="res://scripts/stats_dh.gd" id="3_h2yge"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="HTTPRequestImg" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+
+[node name="SearchTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="InputField" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../../ScrollContainer/ResultList")
+placeholder_text = "Insert a keyword"
+alignment = 1
+clear_button_enabled = true
+caret_blink = true
+
+[node name="ButtonRandomize" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " Randomize! "
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ResultList" type="ItemList" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+auto_width = true
+auto_height = true
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 219.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="StatsDnD" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_0xm2m")
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]DnD"
+fit_content = true
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="CR" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+
+[node name="HP" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="AC" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="SavingThrows" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="Proficency" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="SpecialAbilities" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="Actions" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="LegendaryActions" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="DamageImmunities" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="DamageResistances" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="DamageVulnerabilities" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ConditionImmunities" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="ImageDisplay" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDnD"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+expand_mode = 5
+
+[node name="StatsDH" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("3_h2yge")
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]Daggerheart"
+fit_content = true
+
+[node name="Name_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="Tier_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MainStats" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Difficulty_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Diff"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Thresholds_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Thr"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HP_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "HP"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Stress_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Stress"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Stress_increase" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "+2 (mental resistance)"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AttackModifier_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Atk mod"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator4" type="VSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AttackType_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "Attack type"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator5" type="VSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Damage_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "1d1+1"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Experiences_DH" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/PanelContainer/MarginContainer/MainStats"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "Experiences"
+fit_content = true
+autowrap_mode = 0
+
+[node name="FeaturesContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/MarginContainer/HBoxContainer/StatsDH/FeaturesContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/bold_font_size = 22
+bbcode_enabled = true
+text = "[b]FEATURES"
+fit_content = true
