@@ -25,6 +25,13 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
+[input]
+
+mmm={
+"deadzone": 0.2,
+"events": []
+}
+
 [rendering]
 
 renderer/rendering_method="mobile"

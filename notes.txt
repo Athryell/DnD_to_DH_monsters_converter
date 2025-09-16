@@ -4,3 +4,32 @@ https://www.reddit.com/r/dndnext/comments/jnol3b/table_of_average_acs_saving_thr
 https://www.reddit.com/r/dndnext/comments/2nn6ld/the_monster_quick_stats_by_cr_table/
 https://www.reddit.com/r/dndnext/comments/sly9wk/i_made_a_chart_with_average_monster_stats_for/
 https://docs.google.com/document/d/12g-obIkdGJ_iLL19bS0oKPDDvPbPI9pWUiFqGw8ED88/edit?tab=t.0#heading=h.mdjo15f06zjv
+
+Bruisers
+	High damage and often use area attacks.Sometimes they have the “Slow” feature to play up their
+	lumbering nature, or features that move the PCs around to display their power
+	Offensively, a Bruiser’s attack modifiers are usually average or lower, and most of their attacks
+	deal Major or Severe damage (as appropriate for their tier). Defensively, they have average or
+	lower Difficulty, higher than average Hit Points, and slightly higher than average damage thresholds.
+	Tier 3 example
+		Diff: very low (-1, -2)
+		Thr: very high 26-42
+	>>> Tier 1
+	> BEAR
+	A large bear with thick fur and powerful claws.
+	Motives & Tactics: Climb, defend territory, pummel, track
+	Difficulty: 14 | Thresholds: 9/17 | HP: 7 | Stress: 2
+	ATK: +1 | Claws: Melee | 1d8+3 phy
+	Experience: Ambusher +3, Keen Senses +2
+	FEATURES
+	Overwhelming Force - Passive: Targets who mark HP from the Bear’s standard attack are knocked back to Very Close range. Bite - Action: Mark a Stress to make an attack against a target
+	within Melee range. On a success, deal 3d4+10 physical damage and the target is Restrained until they break free with a successful Strength Roll.
+	Momentum - Reaction: When the Bear makes a successful attack against a PC, you gain a Fear.
+		
+Horde
+	They deal high damage initially, but less once they’ve marked at least half of their Hit Points (rounded up). Many of them have interesting passives or reactions that capture their role in the fiction. Every Horde has the “Horde” passive, which is unique to this adversary type:
+	Horde (X) - Passive: When the Horde has marked half or more of their HP, their standard attack deals X damage instead.
+	Hordes also have a unique notation of (Y/HP) next to their type in their stat block. The Y represents the number of creatures represented by each Hit Point the Horde has
+	Hordes have low Difficulty and attack modifiers, as well as average damage thresholds.
+	
+	
